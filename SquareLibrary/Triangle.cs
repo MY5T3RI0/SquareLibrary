@@ -52,10 +52,9 @@ namespace SquareLibrary
         /// <returns>Площадь.</returns>
         public override double GetSquare()
         {
-            int perimeter = GetPerimeter();
+            int semiperimeter = GetPerimeter()/2;
             double result =
-                Math.Pow(perimeter * (perimeter - Sides[0]) * (perimeter - Sides[1]) * (perimeter - Sides[2]),
-                1 / 2);
+                Math.Sqrt(semiperimeter * (semiperimeter - Sides[0]) * (semiperimeter - Sides[1]) * (semiperimeter - Sides[2]));
             return result;
         }
     }

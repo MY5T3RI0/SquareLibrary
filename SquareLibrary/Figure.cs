@@ -11,12 +11,12 @@ namespace SquareLibrary
         /// <summary>
         /// Список сторон.
         /// </summary>
-        private List<int> Sides { get; set; }
+        protected List<int> Sides { get; set; }
 
         /// <summary>
         /// Радиус.
         /// </summary>
-        private int Radius { get; set; }
+        protected int Radius { get; set; }
 
         /// <summary>
         /// Создать новую фигуру.

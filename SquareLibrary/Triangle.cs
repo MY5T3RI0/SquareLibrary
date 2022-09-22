@@ -34,7 +34,7 @@ namespace SquareLibrary
         /// Расчитать периметр.
         /// </summary>
         /// <returns>Периметр.</returns>
-        public override int GetPerimeter()
+        public override float GetPerimeter()
         {
             int result = 0;
 
@@ -52,7 +52,7 @@ namespace SquareLibrary
         /// <returns>Площадь.</returns>
         public override double GetSquare()
         {
-            int semiperimeter = GetPerimeter()/2;
+            var semiperimeter = GetPerimeter()/2;
             double result =
                 Math.Sqrt(semiperimeter * (semiperimeter - Sides[0]) * (semiperimeter - Sides[1]) * (semiperimeter - Sides[2]));
             return result;

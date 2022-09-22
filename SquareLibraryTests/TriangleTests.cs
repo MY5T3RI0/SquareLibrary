@@ -29,7 +29,7 @@ namespace SquareLibrary.Tests
 
             //Act
             var actualPerimeter = triangle.GetPerimeter();
-            var expectedPerimeter = sides[0] + sides[1] + sides[2];
+            int expectedPerimeter = sides[0] + sides[1] + sides[2];
 
             //Assert
             Assert.AreEqual(actualPerimeter, expectedPerimeter);

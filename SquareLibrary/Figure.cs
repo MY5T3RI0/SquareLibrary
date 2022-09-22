@@ -45,7 +45,7 @@ namespace SquareLibrary
         /// Получить периметр.
         /// </summary>
         /// <returns>Периметр.</returns>
-        public virtual int GetPerimeter()
+        public virtual float GetPerimeter()
         {
             return default;  
         }

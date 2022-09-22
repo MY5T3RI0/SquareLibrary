@@ -27,9 +27,9 @@ namespace SquareLibrary
         /// Рассчитать периметр.
         /// </summary>
         /// <returns>Периметр.</returns>
-        public override float GetPerimeter()
+        public override double GetPerimeter()
         {
-            return (float)(Math.PI * 2 * Radius);            
+            return Math.PI * 2 * Radius;            
 
         }
 

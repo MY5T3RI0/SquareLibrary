@@ -28,13 +28,19 @@ namespace SquareLibrary
             {
                 throw new ArgumentException("Сторона не может быть меньше 1", nameof(c));
             }
+
+            if (!(a + b > c && a +c > b && b +c > a))
+            {
+                throw new ArgumentException("Треугольник не существует");
+            }
+                
         }
 
         /// <summary>
         /// Расчитать периметр.
         /// </summary>
         /// <returns>Периметр.</returns>
-        public override float GetPerimeter()
+        public override double GetPerimeter()
         {
             int result = 0;
 
@@ -52,7 +58,7 @@ namespace SquareLibrary
         /// <returns>Площадь.</returns>
         public override double GetSquare()
         {
-            var semiperimeter = GetPerimeter()/2;
+            double semiperimeter = GetPerimeter()/2;
             double result =
                 Math.Sqrt(semiperimeter * (semiperimeter - Sides[0]) * (semiperimeter - Sides[1]) * (semiperimeter - Sides[2]));
             return result;

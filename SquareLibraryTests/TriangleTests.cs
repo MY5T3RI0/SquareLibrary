@@ -17,7 +17,16 @@ namespace SquareLibrary.Tests
         public void Initialize()
         {
             var rnd = new Random(DateTime.Now.Millisecond);
-            sides = new List<int> { rnd.Next(0, 100), rnd.Next(0, 100), rnd.Next(0, 100) };
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            while(!(a + b > c && a + c > b && b + c > a)) //Исключение случая генерации несуществующего треугольника
+            {
+                a = rnd.Next(1, 100);
+                b = rnd.Next(1, 100);
+                c = rnd.Next(1, 100);
+            }
+            sides = new List<int> { a, b, c };
             
         }
 
@@ -29,7 +38,7 @@ namespace SquareLibrary.Tests
 
             //Act
             var actualPerimeter = triangle.GetPerimeter();
-            int expectedPerimeter = sides[0] + sides[1] + sides[2];
+            var expectedPerimeter = sides[0] + sides[1] + sides[2];
 
             //Assert
             Assert.AreEqual(actualPerimeter, expectedPerimeter);
@@ -43,7 +52,8 @@ namespace SquareLibrary.Tests
 
             //Act
             var actualSquare = triangle.GetSquare();
-            var semiPerimeter = (sides[0] + sides[1] + sides[2])/2;
+            double perimeter = sides[0] + sides[1] + sides[2];
+            double semiPerimeter = perimeter / 2;
             var expectedSquare = 
                 Math.Sqrt(semiPerimeter * (semiPerimeter - sides[0]) * (semiPerimeter - sides[1]) * (semiPerimeter - sides[2]));
 
